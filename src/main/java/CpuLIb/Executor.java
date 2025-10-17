@@ -7,13 +7,13 @@ public class Executor {
         this.cpu = cpu;
     }
 
-    public void run(Command[] prog) {
+    public void run(Prog prog) {
         for(Command command : prog) {
-            try {
-                cpu.execute(command);
-            } catch (CpuException e) {
-                System.out.println(e.getMessage());
-            }
+                try {
+                    cpu.execute(command);
+                } catch (CpuException e) {
+                    System.out.println(e.getMessage());
+                }
         }
 
     }

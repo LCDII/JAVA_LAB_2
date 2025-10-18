@@ -24,12 +24,9 @@ public class Executor {
 
     public List<Integer> getMemDiap()
     {
-        List<Integer> l = IntStream.range(0, cpu.getAllMem().length)
+        return IntStream.range(0, cpu.getAllMem().length)
                 .filter(x->cpu.getAllMem()[x] != 0)
-                .boxed()//Преобразование в Stream<Integer>
+                .boxed()//Преобразование в Stream<Integer> чтобы работал collect
                 .collect(Collectors.toList());
-
-
-        return l;
     }
 }

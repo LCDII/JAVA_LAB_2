@@ -1,12 +1,16 @@
 package CpuLIb;
 
+import java.util.Arrays;
 import java.util.Currency;
 import java.util.Iterator;
+import java.util.stream.Stream;
 
 public class Prog implements Iterable<Command>{
 
     Command []a;
     int cnt =0;
+
+
 
     public Prog(int n)
     {
@@ -27,6 +31,11 @@ public class Prog implements Iterable<Command>{
     public Command getElem(int ind)
     {
         return a[ind];
+    }
+
+    public Stream<Command> stream()
+    {
+        return Arrays.stream(a);
     }
 
     @Override

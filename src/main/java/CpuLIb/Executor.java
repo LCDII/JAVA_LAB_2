@@ -1,5 +1,9 @@
 package CpuLIb;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.*;
 public class Executor {
     private ICpu cpu;
 
@@ -16,5 +20,16 @@ public class Executor {
                 }
         }
 
+    }
+
+    public List<Integer> getMemDiap()
+    {
+        List<Integer> l = IntStream.range(0, cpu.getAllMem().length)
+                .filter(x->cpu.getAllMem()[x] != 0)
+                .boxed()//Преобразование в Stream<Integer>
+                .collect(Collectors.toList());
+
+
+        return l;
     }
 }

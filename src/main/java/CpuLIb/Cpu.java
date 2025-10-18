@@ -12,6 +12,11 @@ class Cpu implements ICpu{
         return handler;
     }
 
+    public final int[] getAllMem()
+    {
+        return mem;
+    }
+
     public int getRegister(String string) throws CpuException {
         int number;
         switch (string) {
